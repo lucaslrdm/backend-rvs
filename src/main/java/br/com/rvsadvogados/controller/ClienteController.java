@@ -21,6 +21,27 @@ public class ClienteController {
 	@Autowired
 	private ClienteDAO dao;
 	
+	@PostMapping("/loginemailcliente")
+	public ResponseEntity<Cliente> logar(@RequestBody Cliente objeto){
+		
+		Cliente cliente = dao.findByEmailAndSenha(objeto.getEmailcli(), objeto.getSenhaCliente());
+		
+		if(cliente==null) return ResponseEntity.status(404).build();
+		
+		return ResponseEntity.ok(cliente);
+	}
+	
+	@PostMapping("/loginusuariocliente")
+	public ResponseEntity<Cliente> logarUsuario(@RequestBody Cliente objeto){
+		
+		Cliente cliente = dao.findByLoginAndSenha(objeto.getLoginCliente(), objeto.getSenhaCliente());
+
+		if(cliente==null) {
+		
+			return ResponseEntity.status(405).build();}
+		
+		return ResponseEntity.ok(cliente);
+	}
 	
 	@GetMapping("/relatorioclientes")
 	public ResponseEntity<List<Cliente>> getAll(){

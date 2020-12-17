@@ -55,6 +55,7 @@ public class AdvogadoController {
 			return ResponseEntity.status(404).build();
 		}
 		return ResponseEntity.ok(lista);
+	
 		
 	}
 	

@@ -65,7 +65,7 @@ public class ClienteController {
 	public ResponseEntity<List<Cliente>> getProcessoIdadvogado(@RequestBody Cliente objeto){
 		/*
 		
-		*/List<Cliente> lista = dao.findByAdvogadoIdadvogado(objeto.getAdvogado().getIdAdvogado());
+		*/List<Cliente> lista = dao.findByAdvogadoId(objeto.getAdvogado().getIdAdvogado());
 		/*if(lista.size()==0) return ResponseEntity.status(404).build();
 		return ResponseEntity.ok(lista);
 		*/

@@ -34,6 +34,14 @@ public class Cliente {
 	@Column(name="emailcli",length=80)
 	private String emailcli;
 	
+	@JsonProperty("login")
+	@Column(name="login",length=10)
+	private String login;
+	
+	@JsonProperty("senha")
+	@Column(name="senha",length=20)
+	private String senha;
+	
 	@JsonProperty("celcli")
 	@Column(name="celcli", length=15)
 	private String celcli;
@@ -141,9 +149,22 @@ public class Cliente {
 
 
 	
+	public String getLoginCliente() {
+		return login;
+	}
+
+	public void setLoginCliente(String login) {
+		this.login = login;
+	}
 
 	
-	
+	public String getSenhaCliente() {
+		return senha;
+	}
+
+	public void setSenhaCliente(String senha) {
+		this.senha = senha;
+	}
 	
 	
 

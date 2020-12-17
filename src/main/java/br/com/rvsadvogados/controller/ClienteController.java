@@ -24,7 +24,7 @@ public class ClienteController {
 	@PostMapping("/loginemailcliente")
 	public ResponseEntity<Cliente> logar(@RequestBody Cliente objeto){
 		
-		Cliente cliente = dao.findByEmailAndSenha(objeto.getEmailcli(), objeto.getSenhaCliente());
+		Cliente cliente = dao.findByEmailcliAndSenha(objeto.getEmailcli(), objeto.getSenhaCliente());
 		
 		if(cliente==null) return ResponseEntity.status(404).build();
 		

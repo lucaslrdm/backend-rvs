@@ -19,11 +19,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Table(name="TB_ADVOGADO")
 public class Advogado {
 	
-	@JsonProperty("idadvogado")
-	@Column(name="idadvogado")
+	@JsonProperty("id")
+	@Column(name="id")
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idadvogado;
+	private int id;
 	
     @JsonProperty("nome")
 	@Column(name="nomeadvogado",length=50)
@@ -66,7 +66,7 @@ public class Advogado {
 	public Advogado(int idadvogado, String nomeadvogado, String loginadvogado, String emailadvogado,
 			String senhaadvogado, String foto, List<Processos> processos, List<Cliente> clientes) {
 		super();
-		this.idadvogado = idadvogado;
+		this.id = idadvogado;
 		this.nomeadvogado = nomeadvogado;
 		this.login = loginadvogado;
 		this.email = emailadvogado;
@@ -79,11 +79,11 @@ public class Advogado {
 
 
 	public int getIdAdvogado() {
-		return idadvogado;
+		return id;
 	}
 
 	public void setIdAdvogado(int idAdvogado) {
-		this.idadvogado = idAdvogado;
+		this.id = idAdvogado;
 	}
 
 	public String getNomeAdvogado() {

@@ -14,7 +14,7 @@ public interface ClienteDAO extends CrudRepository<Cliente, Integer>{
 	public List<Cliente> findByNomecli(String nomecliente);
 	public List<Cliente> findByProcessosIdprocesso(int idprocesso);
 	public List<Cliente> findByAdvogadoIdadvogado(int idadvogado);
-	public Cliente findByEmailAndSenha(String email, String senha);
+	public Cliente findByEmailcliAndSenha(String email, String senha);
 	public Cliente findByLoginAndSenha(String login, String senha);
 
 	
